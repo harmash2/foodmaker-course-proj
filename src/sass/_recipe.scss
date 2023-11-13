@@ -1,0 +1,242 @@
+.recipe {
+  background-color: $color-grey-light-1;
+
+  ///////////
+  // FIGURE
+  &__fig {
+    height: 32rem;
+    position: relative;
+    // transform: scale(1.04) translateY(-1px);
+    transform-origin: top;
+
+    &::before {
+      content: '';
+      display: block;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: linear-gradient(
+        to right bottom,
+        rgba(107, 86, 107, 0.801),
+        rgba(107, 119, 107, 0.801)
+      );
+      opacity: 0.6;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    display: block;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__title {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 20%) skewY(-6deg);
+    color: #fff;
+    font-weight: 700;
+    font-size: 3.25rem;
+    text-transform: uppercase;
+    width: 50%;
+    line-height: 1.95;
+    text-align: center;
+    @media only screen and (max-width: $bp-small) {
+      font-size: 2.25rem;
+      
+    }
+
+
+    span {
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+      padding: 1.3rem 2rem;
+      background-image: linear-gradient(
+        to right bottom,
+        $color-grad-1,
+        $color-grad-2
+      );
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      width: 70%;
+    }
+  }
+
+  ///////////
+  // DETAILS
+  &__details {
+    display: flex;
+    align-items: center;
+    padding: 7.5rem 8rem 3.5rem 8rem;
+    @media only screen and (max-width: $bp-medium) {
+      padding: 7.5rem 6rem 3.5rem 6rem;
+    }
+    @media only screen and (max-width: $bp-small) {
+      padding: 7.5rem 4rem 3.5rem 4rem;
+    }
+    @media only screen and (max-width: $bp-smallest) {
+      justify-content: space-around;
+      padding: 7.5rem .5rem 3.5rem .5rem;
+    }
+  }
+
+  &__info {
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    @media only screen and (max-width: $bp-smallest) {
+      font-size: 1.25rem;
+    }
+
+    &:not(:last-child) {
+      margin-right: 4.5rem;
+      @media only screen and (max-width: $bp-smallest) {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  &__info-icon {
+    height: 2.35rem;
+    width: 2.35rem;
+    fill: $color-primary;
+    margin-right: 1.15rem;
+    @media only screen and (max-width: $bp-smallest) {
+      height: 2rem;
+      width: 2rem;
+      margin-right: 0.5rem;
+    }
+  }
+
+  &__info-data {
+    margin-right: 0.5rem;
+    font-weight: 700;
+  }
+
+  &__info-buttons {
+    display: flex;
+    margin-left: 1.6rem;
+    transform: translateY(-1px);
+    @media only screen and (max-width: $bp-smallest) {
+      margin-left: 1rem;
+
+    }
+  }
+
+  &__user-generated {
+    background-color: darken($color-grey-light-2, 2%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 10rem;
+
+    margin-left: auto;
+    margin-right: 1.75rem;
+    @media only screen and (max-width: $bp-smallest) {
+      margin-left: 0;
+      margin-right: 1rem;
+    }
+    svg {
+      height: 2.25rem;
+      width: 2.25rem;
+      fill: $color-primary;
+      @media only screen and (max-width: $bp-smallest) {
+        height: 2rem;
+        width: 2rem;
+      }
+    }
+  }
+
+
+  ///////////
+  // INGREDIENTS
+  &__ingredients {
+    padding: 5rem 8rem;
+    font-size: 1.6rem;
+    line-height: 1.4;
+    background-color: $color-grey-light-2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media only screen and (max-width: $bp-smallest) {
+      padding: 4rem 1rem;
+      font-size: 1.125rem;
+    }
+  }
+
+  &__ingredient-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem 3rem;
+    list-style: none;
+  }
+
+  &__ingredient {
+    display: flex;
+  }
+
+  &__icon {
+    height: 2rem;
+    width: 2rem;
+    fill: $color-primary;
+    margin-right: 1.1rem;
+    flex: 0 0 auto;
+    margin-top: 0.1rem;
+  }
+
+  &__quantity {
+    margin-right: 0.5rem;
+    flex: 0 0 auto;
+  }
+
+  ///////////
+  // DIRECTIONS
+  &__directions {
+    padding: 5rem 10rem;
+    padding-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media only screen and (max-width: $bp-smallest) {
+      padding: 1rem 1rem;
+    }
+  }
+
+  &__directions-text {
+    font-size: 1.7rem;
+    text-align: center;
+    margin-bottom: 3.5rem;
+    color: $color-grey-dark-2;
+  }
+
+  &__publisher {
+    font-weight: 700;
+  }
+
+  &__copyright {
+    display: none;
+    color: $color-grey-dark-2;
+    font-size: 1.2rem;
+    padding: 0 3.5rem;
+    margin-top: 4rem;
+    @media only screen and (max-width: $bp-medium) {
+      display: block;
+      text-align: center;
+      padding-bottom: 2rem;
+    }
+  
+    .twitter-link:link,
+    .twitter-link:visited {
+      color: $color-grey-dark-2;
+    }
+  }
+}
