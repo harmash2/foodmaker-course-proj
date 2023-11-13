@@ -1,7 +1,6 @@
 // Parcel можем импортить не только .js файльі, но и другие статические файльі, img, etc..
 import View from './View.js';
 import icons from '../../img/icons.svg';
-// import {Fraction} from 'fractional';
 
 class RecipeView extends View {
   _parentElement = document.querySelector('.recipe');
@@ -10,8 +9,6 @@ class RecipeView extends View {
 
 
   addHandlerRender(handler) {
-    // window.addEventListener('load', handler);
-    // window.addEventListener('hashchange', handler);
     ['hashchange', 'load'].forEach(ev => window.addEventListener(ev, handler))
   }
 
@@ -138,6 +135,3 @@ class RecipeView extends View {
 }
 
 export default new RecipeView();
-
-{/* <div class="recipe__quantity">${ing.quantity ? new Fraction(
-  ing.quantity).toString() : ''}</div> */}

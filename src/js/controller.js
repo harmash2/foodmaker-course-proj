@@ -1,4 +1,3 @@
-// bussines logic model.js
 import * as model from './model.js';
 import { MODAL_CLOSE } from './config.js';
 import recipeVew from './Views/recipeVew.js';
@@ -10,12 +9,6 @@ import addRecipeView from './Views/addRecipeView.js';
 
 import 'core-js/stable'; // polifyling for old browsers
 import 'regenerator-runtime/runtime'; // polifyling for old browsers
-
-// https://forkify-api.herokuapp.com/v2
-//* ////////////////////////////////////
-// if (module.hot) {
-//   module.hot.accept();
-// }
 
 
 const controlRecipes = async function() {
@@ -135,9 +128,6 @@ const controlAddRecipe = async function(newRecipe) {
     addRecipeView.renderError(err.message);
   }
 };
-
-
-
 
 
 const init = function() {
